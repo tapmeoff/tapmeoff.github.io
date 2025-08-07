@@ -1,0 +1,26 @@
+button {
+   font-size: 50px; 
+}
+
+input {
+    transform: scale(2);
+}
+
+p {
+    display: none;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    width: min-content;
+    margin-right: 20px;
+}
+
+#settings {
+    display: flex;
+    flex-direction: column; 
+}
+
