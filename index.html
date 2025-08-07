@@ -8,19 +8,32 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <button id="generate">tap me off</button>
-        <button id="playPrev">play previous</button>
+        <div id="buttons">
+            <div id="buttonGrid">
+                <button id="tapMeOff">tap me off</button>
+                <img src="SPENCER.jpg" id="spencerImg" />
+                <button id="playPrev">play previous</button>
+                <button id="setting">settings</button>
+            </div>
+        </div>
+
         <audio id="audio" controls></audio>
 
-        <br />
-        <br />
-
-        <p id="sheetMusic">on</p>
+        <img src="sheets/beyonceSheet.png" id="beyonceSheet" />
+        <img src="sheets/claveSheet.png" id="claveSheet" />
+        <img src="sheets/cooperSheet.png" id="cooperSheet" />
+        <img src="sheets/crunchTimeSheet.png" id="crunchTimeSheet" />
+        <img src="sheets/elTigreSheet.png" id="elTigreSheet" />
+        <img src="sheets/jamaicaSheet.png" id="jamaicaSheet" />
+        <img src="sheets/mouthSheet.png" id="mouthSheet" />
+        <img src="sheets/ocpSheet.png" id="ocpSheet" />
+        <img src="sheets/speedSheet.png" id="speedSheet" />
 
         <div id="settings">
-            <label><input type="checkbox" id="darkmode" />dark mode</label>
-            <label><input type="checkbox" id="sheet" />show sheet music</label>
-            <label><input type="checkbox" id="disable" checked />disable after played</label>
+            <label><input type="checkbox" id="SPENCER" />SPENCER</label>
+            <label><input type="checkbox" id="darkmode" checked />dark mode</label>
+            <label><input type="checkbox" id="sheet" checked />show sheet music</label>
+            <label><input type="checkbox" id="disable" />disable after played</label>
             <label><input type="checkbox" id="beyonce" checked />include beyonce</label>
             <label><input type="checkbox" id="clave" checked />include clave</label>
             <label><input type="checkbox" id="cooper" checked />include cooper</label>
@@ -30,8 +43,16 @@
             <label><input type="checkbox" id="mouth" checked />include mouth</label>
             <label><input type="checkbox" id="ocp" checked />include ocp</label>
             <label><input type="checkbox" id="speed" checked />include speed</label>
+            <a href="https://accrlrr.github.io/">spencer's og site</a>
         </div>
 
-        <!-- to do: make pretty, add sheet music images -->
+        <div id="dimmer"></div>
+
+        <!-- to do:
+        make pretty (maybe use uva style guide)
+        add sheet music
+        cut off silence from clips maybe
+        add theme customization options maybe
+        add button to show, but not play, previous maybe -->
     </body>
 </html>
