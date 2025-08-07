@@ -1,11 +1,18 @@
 :root {
-    --blue: #232d4b;
-    --orange: #e57200;
+    --blue: #232d4b; /* official uva */
+    --orange: #e57200; /* official uva */
+    --teal: #00b7c3; /* from the checkboxes default */
 }
 
 @font-face {
     font-family: Tilt Warp;
     src: url("tiltwarp.ttf") format("truetype");
+}
+
+@media only screen and (max-width: 500px) {
+    #settings {
+        transform: scale(2);
+    }
 }
 
 #buttons {
@@ -74,6 +81,7 @@ button:hover {
 
 input {
     transform: scale(2);
+    accent-color: var(--teal);
 }
 
 audio {
@@ -144,5 +152,5 @@ input {
 
 a {
     cursor: pointer;
-    color: #00b7c3; /* the teal from the checkboxes */
+    color: var(--teal);
 }
