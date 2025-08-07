@@ -13,6 +13,14 @@
     #settings {
         transform: scale(2);
     }
+    
+    #settingText {
+        display: none;
+    }
+    
+    #settingIcon {
+        display: inline;
+    }
 }
 
 #buttons {
@@ -137,6 +145,14 @@ input {
     transform: translate(-50%, -50%);
     z-index: 2;
     visibility: hidden;
+}
+
+#settingText {
+    display: inline;
+}
+
+#settingIcon {
+    display: none;
 }
 
 #dimmer {
