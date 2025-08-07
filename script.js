@@ -65,8 +65,13 @@ function spence() {
         document.getElementById("playPrev").innerHTML = "play previous";
         document.getElementById("setting").innerHTML = "settings";
         document.getElementById("spencerImg").style.visibility = "hidden";
+        if (screen.width > 500)
         document.getElementById("buttonGrid").style.gridTemplateAreas =
             ' "tapMeOff tapMeOff tapMeOff" "playPrev playPrev settings"';
+        else document.getElementById("buttonGrid").style.gridTemplateAreas =
+            ' "tapMeOff tapMeOff tapMeOff" "playPrev playPrev playPrev" "settings settings settings"';
+        
+        
     }
 }
 

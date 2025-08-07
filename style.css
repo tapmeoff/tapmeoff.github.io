@@ -13,13 +13,12 @@
     #settings {
         transform: scale(2);
     }
-    
-    #settingText {
-        display: none;
-    }
-    
-    #settingIcon {
-        display: inline;
+
+    #buttonGrid {
+        grid-template-areas:
+            "tapMeOff tapMeOff tapMeOff"
+            "playPrev playPrev playPrev"
+            "settings settings settings";
     }
 }
 
