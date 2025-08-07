@@ -58,20 +58,30 @@ function spence() {
         document.getElementById("playPrev").innerHTML = "PLAY PREVIOUS";
         document.getElementById("setting").innerHTML = "SETTINGS";
         document.getElementById("spencerImg").style.visibility = "visible";
-        document.getElementById("buttonGrid").style.gridTemplateAreas =
-            ' "tapMeOff tapMeOff tapMeOff" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "playPrev playPrev settings" ';
+        if(debug) console.log(screen.width);
+        /* this does not */
+        if (screen.width < 1000) {
+            document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
+            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "tapMeOff" "spencer" "playPrev" "settings" ';
+        } else {
+            document.getElementById("buttonGrid").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
+            document.getElementById("buttonGrid").style.gridTemplateAreas =
+                ' "tapMeOff tapMeOff tapMeOff" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "playPrev playPrev settings" ';
+        }
     } else {
         document.getElementById("tapMeOff").innerHTML = "tap me off";
         document.getElementById("playPrev").innerHTML = "play previous";
         document.getElementById("setting").innerHTML = "settings";
         document.getElementById("spencerImg").style.visibility = "hidden";
-        if (screen.width > 700)
-        document.getElementById("buttonGrid").style.gridTemplateAreas =
-            ' "tapMeOff tapMeOff tapMeOff" "playPrev playPrev settings"';
-        else document.getElementById("buttonGrid").style.gridTemplateAreas =
-            ' "tapMeOff" "playPrev" "settings"';
-        
-        
+        /* this works */
+        if (screen.width > 1000) {
+            document.getElementById("buttonGrid").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
+            document.getElementById("buttonGrid").style.gridTemplateAreas =
+                ' "tapMeOff tapMeOff tapMeOff" "playPrev playPrev settings"';
+        } else {
+            document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
+            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "tapMeOff" "playPrev" "settings"';
+        }
     }
 }
 

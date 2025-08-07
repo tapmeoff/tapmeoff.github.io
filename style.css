@@ -9,19 +9,6 @@
     src: url("tiltwarp.ttf") format("truetype");
 }
 
-@media only screen and (max-width: 800px) {
-    #settings {
-        transform: scale(2);
-    }
-
-    #buttonGrid {
-        grid-template-areas:
-            "tapMeOff"
-            "playPrev"
-            "settings";
-    }
-}
-
 #buttons {
     /* fills the whole screen and stays there */
     position: fixed;
@@ -40,7 +27,6 @@
     grid-area: tapMeOff;
     background-color: var(--orange);
     border-color: var(--orange);
-
 }
 
 #playPrev {
@@ -59,7 +45,7 @@
     display: grid;
     grid-gap: 17px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas: 
+    grid-template-areas:
         "tapMeOff tapMeOff tapMeOff"
         "playPrev playPrev settings";
 }
@@ -168,4 +154,14 @@ input {
 a {
     cursor: pointer;
     color: var(--teal);
+}
+
+/* this has to be LAST */
+/* i unfortunately found this out via chatgpt :((((((( */
+@media only screen and (max-width: 800px) {
+    #buttonGrid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "tapMeOff" "playPrev" "settings";
+    }
 }
