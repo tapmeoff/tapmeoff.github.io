@@ -3,6 +3,11 @@
     --orange: #e57200;
 }
 
+@font-face {
+    font-family: Tilt Warp;
+    src: url("tiltwarp.ttf") format("truetype");
+}
+
 #buttons {
     /* fills the whole screen and stays there */
     position: fixed;
@@ -11,7 +16,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    padding: 25% 20% 25% 20%;
+    padding: 20% 15% 20% 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +51,7 @@
 }
 
 button {
-    font-family: Montserrat;
+    font-family: "Tilt Warp", "Trebuchet MS";
     font-size: 30px;
     height: 100px;
     color: white;
@@ -98,10 +103,11 @@ img {
     border: none !important;
 }
 
-label, a {
+label,
+a {
     width: 200px;
     margin-top: 10px;
-    font-family: Montserrat;
+    font-family: "Tilt Warp", "Trebuchet MS";
 }
 
 input {
@@ -137,6 +143,6 @@ input {
 }
 
 a {
-    cursor: pointer; 
-    color: #00b7c3 /* the teal from the checkboxes */
+    cursor: pointer;
+    color: #00b7c3; /* the teal from the checkboxes */
 }
