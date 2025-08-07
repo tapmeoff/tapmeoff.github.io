@@ -3,8 +3,11 @@ document.getElementById("playPrev").addEventListener("click", (event) => playPre
 
 const a = document.getElementById("audio");
 
+const darkmode = document.getElementById("darkmode");
+darkmode.addEventListener("change", (event) => setMode());
+
 const sheet = document.getElementById("sheet");
-const sheetMusic = document.getElementById("sheetMusic");
+const sheetmusic = document.getElementById("sheetmusic");
 const disable = document.getElementById("disable");
 const beyonce = document.getElementById("beyonce");
 const clave = document.getElementById("clave");
@@ -33,11 +36,23 @@ function tap(name) {
     a.play();
 }
 
+function setMode() {
+    if (darkmode.checked) {
+        document.querySelector("body").style.backgroundColor = "black";
+        textcolor = "white";
+    } else {
+        document.querySelector("body").style.backgroundColor = "white";
+        textcolor = "black";
+    }
+    labels = document.querySelectorAll("label");
+    for (let i=0; i<labels.length; i++)
+        labels[i].style.color = textcolor;
+}
+
 function waitThenDisable() {
     /* if still playing, wait 100 ms then check again */
     if (a.ended == false) window.setTimeout(waitThenDisable, 100);
-    /* if ended, then disable */
-    else {
+    /* if ended, then disable */ else {
         if (tracks[num] == "Beyonce") beyonce.checked = false;
         else if (tracks[num] == "Clave") clave.checked = false;
         else if (tracks[num] == "Cooper") cooper.checked = false;
