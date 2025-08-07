@@ -9,16 +9,16 @@
     src: url("tiltwarp.ttf") format("truetype");
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
     #settings {
         transform: scale(2);
     }
 
     #buttonGrid {
         grid-template-areas:
-            "tapMeOff tapMeOff tapMeOff"
-            "playPrev playPrev playPrev"
-            "settings settings settings";
+            "tapMeOff"
+            "playPrev"
+            "settings";
     }
 }
 
@@ -40,7 +40,7 @@
     grid-area: tapMeOff;
     background-color: var(--orange);
     border-color: var(--orange);
-    margin-bottom: 17px;
+
 }
 
 #playPrev {
@@ -59,7 +59,7 @@
     display: grid;
     grid-gap: 17px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
+    grid-template-areas: 
         "tapMeOff tapMeOff tapMeOff"
         "playPrev playPrev settings";
 }
