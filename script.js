@@ -57,30 +57,29 @@ function spence() {
         document.getElementById("tapMeOff").innerHTML = "TAP ME OFF, SPENCER";
         document.getElementById("playPrev").innerHTML = "PLAY PREVIOUS";
         document.getElementById("setting").innerHTML = "SETTINGS";
-        document.getElementById("spencerImg").style.visibility = "visible";
+        document.getElementById("spencerImg").style.display = "inline";
         if(debug) console.log(screen.width);
-        /* this does not */
-        if (screen.width < 1000) {
-            document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
-            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "tapMeOff" "spencer" "playPrev" "settings" ';
-        } else {
+        /* go in to spencer mode */
+        if (screen.width > 800) {
             document.getElementById("buttonGrid").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
-            document.getElementById("buttonGrid").style.gridTemplateAreas =
-                ' "tapMeOff tapMeOff tapMeOff" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "spencer spencer spencer" "playPrev playPrev settings" ';
+            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "playPrev playPrev settings" ';
+        } else {
+            document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
+            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "playPrev" "settings" ';
         }
     } else {
         document.getElementById("tapMeOff").innerHTML = "tap me off";
         document.getElementById("playPrev").innerHTML = "play previous";
         document.getElementById("setting").innerHTML = "settings";
-        document.getElementById("spencerImg").style.visibility = "hidden";
-        /* this works */
-        if (screen.width > 1000) {
+        document.getElementById("spencerImg").style.display = "none";
+        /* go out of spencer mode */
+        if (screen.width > 800) {
             document.getElementById("buttonGrid").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
             document.getElementById("buttonGrid").style.gridTemplateAreas =
-                ' "tapMeOff tapMeOff tapMeOff" "playPrev playPrev settings"';
+                ' "playPrev playPrev settings"';
         } else {
             document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
-            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "tapMeOff" "playPrev" "settings"';
+            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "playPrev" "settings"';
         }
     }
 }
@@ -169,6 +168,9 @@ function tapMeOff() {
 
     /* show sheet music if requested */
     if (sheet.checked) showSheet(tracks[num]);
+    
+    /* show dimmer */
+    document.getElementById("dimmer").style.visibility = "visible";
 
     /* play track */
     tap(tracks[num]);
