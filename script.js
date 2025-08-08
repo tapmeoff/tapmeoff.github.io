@@ -58,29 +58,11 @@ function spence() {
         document.getElementById("playPrev").innerHTML = "PLAY PREVIOUS";
         document.getElementById("setting").innerHTML = "SETTINGS";
         document.getElementById("spencerImg").style.display = "inline";
-        if(debug) console.log(screen.width);
-        /* go in to spencer mode */
-        if (screen.width > 800) {
-            document.getElementById("buttonGrid").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
-            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "playPrev playPrev settings" ';
-        } else {
-            document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
-            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "playPrev" "settings" ';
-        }
     } else {
         document.getElementById("tapMeOff").innerHTML = "tap me off";
         document.getElementById("playPrev").innerHTML = "play previous";
         document.getElementById("setting").innerHTML = "settings";
         document.getElementById("spencerImg").style.display = "none";
-        /* go out of spencer mode */
-        if (screen.width > 800) {
-            document.getElementById("buttonGrid").style.gridTemplateColumns = "repeat(3, minmax(0, 1fr))";
-            document.getElementById("buttonGrid").style.gridTemplateAreas =
-                ' "playPrev playPrev settings"';
-        } else {
-            document.getElementById("buttonGrid").style.gridTemplateColumns = "1fr";
-            document.getElementById("buttonGrid").style.gridTemplateAreas = ' "playPrev" "settings"';
-        }
     }
 }
 

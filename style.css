@@ -42,16 +42,11 @@
 
 #buttonGrid {
     display: grid;
-    margin-top: 20px;
-    grid-gap: 25px;
+    grid-gap: 20px; /* gap between play previous and settings */
+    margin-top: 20px; /* gap between spencer and play previous or tap me off and play previous */
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-areas:
         "playPrev playPrev settings";
-}
-
-#buttonFlex {
-    display: flex;
-    flex-direction: column;
 }
 
 button {
@@ -67,8 +62,6 @@ button {
         background-color 0.35s,
         color 0.35s;
     transition-timing-function: ease-in-out;
-    padding-top: 2%;
-    padding-bottom: 2%;
     text-align: center;
 }
 
@@ -106,7 +99,7 @@ img {
 
 #spencerImg {
     position: relative !important;
-    margin-top: 17px;
+    margin-top: 20px;
     transform: translate(-50%, 0);
     z-index: 1;
     border: none !important;
@@ -169,13 +162,10 @@ a {
 /* this has to be LAST */
 /* i unfortunately found this out via chatgpt :((((((( */
 @media only screen and (max-width: 800px) {
-    
-    #spencerImg {
-        margin-top: 10px;
-    }
-    
+
     #buttonGrid {
-        margin-top: 10px;
+        grid-gap: 10px; /* gap between play previous and settings */
+        margin-top: 10px; /* gap between spencer and play previous or tap me off and previous */
         grid-template-columns: 1fr;
         grid-template-areas:
             "playPrev"
