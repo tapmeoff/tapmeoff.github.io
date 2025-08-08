@@ -169,7 +169,13 @@ a {
 /* this has to be LAST */
 /* i unfortunately found this out via chatgpt :((((((( */
 @media only screen and (max-width: 800px) {
+    
+    #spencerImg {
+        margin-top: 10px;
+    }
+    
     #buttonGrid {
+        margin-top: 10px;
         grid-template-columns: 1fr;
         grid-template-areas:
             "playPrev"

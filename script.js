@@ -183,6 +183,9 @@ function tapMeOff() {
 function playPrev() {
     tap(prev);
     if (debug) console.log(prev);
+    
+    /* show dimmer */
+    document.getElementById("dimmer").style.visibility = "visible";
 
     /* show sheet music if requested */
     if (sheet.checked) showSheet(tracks[num]);
